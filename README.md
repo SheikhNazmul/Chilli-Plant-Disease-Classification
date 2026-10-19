@@ -119,3 +119,16 @@ GitHub: [@SheikhNazmul](https://github.com/SheikhNazmul)
 ---
 
 If this project helps your work, feel free to star the repository.
+
+## Run the inference notebook
+
+A standalone inference notebook is available at [`chilli_disease_inference.ipynb`](./chilli_disease_inference.ipynb). It loads `efficientNet_model.keras` from the same directory or downloads it from the Hugging Face Space when the model artifact is published there.
+
+1. Open the notebook in Jupyter or Google Colab.
+2. Install the packages with `pip install -r requirements.txt`.
+3. Run the setup cell to load the model.
+4. Set `IMAGE_PATH` to a chilli leaf image and run prediction, or run the final cell for an interactive upload widget.
+
+The Gradio application source is [`app.py`](./app.py). The live demo and model hosting target is [Hugging Face Spaces](https://huggingface.co/spaces/NazmulNIR/chilli-leaf-disease-detector). The model file is hosted separately from GitHub because it is a large binary artifact.
+
+The project files include `requirements.txt` with pinned inference dependencies. The dataset and trained model are not stored in this GitHub repository.
