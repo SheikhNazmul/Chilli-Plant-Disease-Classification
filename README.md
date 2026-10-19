@@ -4,6 +4,8 @@ An image classification demo for screening chilli leaves across eight disease an
 
 **Live demo:** [Open the Chilli Leaf Disease Detector](https://huggingface.co/spaces/NazmulNIR/chilli-leaf-disease-detector)
 
+![Chilli leaf disease detector predicting leaf spot with 97% confidence](./assets/chilli-leaf-disease-detector-demo.png)
+
 ## Project files
 
 - [`chilli_disease_inference.ipynb`](./chilli_disease_inference.ipynb) — load the model, classify an image, and open a local upload widget from Jupyter or Colab.
