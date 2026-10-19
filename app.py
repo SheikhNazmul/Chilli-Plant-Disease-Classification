@@ -2,6 +2,7 @@ import os
 os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
 
 import gradio as gr
+import spaces
 import numpy as np
 import tensorflow as tf
 
@@ -20,6 +21,7 @@ CLASS_NAMES = [
 model = tf.keras.models.load_model(MODEL_PATH, compile=False)
 
 
+@spaces.GPU
 def predict_disease(image):
     if image is None:
         return {}, "Upload a clear chilli leaf image to get started."
@@ -67,4 +69,6 @@ with gr.Blocks(theme=gr.themes.Soft(), title="Chilli Leaf Disease Detector") as 
 
 if __name__ == "__main__":
     demo.launch()
+
+
 
