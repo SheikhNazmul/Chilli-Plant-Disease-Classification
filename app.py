@@ -4,6 +4,7 @@ import os
 os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
 
 import gradio as gr
+import spaces
 import numpy as np
 import tensorflow as tf
 
@@ -31,6 +32,12 @@ DISPLAY_NAMES = {
 }
 
 model = tf.keras.models.load_model(MODEL_PATH, compile=False)
+
+
+@spaces.GPU
+def zero_gpu_runtime_marker():
+    """Satisfy ZeroGPU startup detection; prediction stays on CPU."""
+    return None
 
 
 def result_card(title, confidence, status, description):
