@@ -5,7 +5,6 @@ os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
 
 import gradio as gr
 import numpy as np
-import spaces
 import tensorflow as tf
 
 
@@ -45,7 +44,6 @@ def result_card(title, confidence, status, description):
     """
 
 
-@spaces.GPU
 def predict_disease(image):
     if image is None:
         return {}, """
